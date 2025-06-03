@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/nadeemramli/teroka-digital/compare/v2.0.1...v2.0.2) (2025-06-03)
+
 ### [2.0.1](https://github.com/once-ui-system/magic-portfolio/compare/v1.3.0...v2.0.1) (2025-06-03)
 
 
