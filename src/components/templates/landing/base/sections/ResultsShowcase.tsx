@@ -27,7 +27,7 @@ export function ResultsShowcase({ results }: ResultsShowcaseProps) {
             Real Results, Real Growth
           </Text>
           <Text variant="body1" align="center" color="secondary">
-            See how we've helped businesses achieve their digital marketing
+            See how we&apos;ve helped businesses achieve their digital marketing
             goals
           </Text>
         </Column>

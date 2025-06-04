@@ -1,5 +1,6 @@
-import { Flex, Text, Button, Image } from "@/once-ui/components";
-import { useTranslations } from "@/lib/i18n/hooks";
+import { Flex, Text, Button } from "@/once-ui/components";
+import Image from "next/image";
+import { useTranslations } from "@/lib/i18n/provider";
 import styles from "./HeroSection.module.scss";
 
 interface HeroSectionProps {
@@ -23,12 +24,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ image }) => {
         <Flex
           direction="column"
           gap="8"
-          maxWidth="600"
+          maxWidth={600}
           className={styles.heroText}
         >
           <Text
             id="hero-title"
-            variant="heading-1"
+            variant="heading-strong-xl"
             onBackground="neutral-strong"
             className={styles.title}
           >

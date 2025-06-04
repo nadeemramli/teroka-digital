@@ -3,11 +3,19 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { routes, protectedRoutes } from "@/app/resources";
-import { Flex, Spinner, Button, Heading, Column, PasswordInput } from "@/once-ui/components";
+import {
+  Flex,
+  Spinner,
+  Button,
+  Heading,
+  Column,
+  PasswordInput,
+} from "@/once-ui/components";
 import NotFound from "@/app/not-found";
+import { supportedLanguages } from "@/lib/i18n/types";
 
 interface RouteGuardProps {
-	children: React.ReactNode;
+  children: React.ReactNode;
 }
 
 const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
@@ -29,13 +37,31 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
       const checkRouteEnabled = () => {
         if (!pathname) return false;
 
-        if (pathname in routes) {
-          return routes[pathname as keyof typeof routes];
+        // Strip language prefix to get the base route
+        const getBaseRoute = (path: string) => {
+          // Check if path starts with a supported language
+          for (const lang of supportedLanguages) {
+            if (path === `/${lang}`) {
+              return "/"; // Language root maps to "/"
+            }
+            if (path.startsWith(`/${lang}/`)) {
+              return path.substring(lang.length + 1); // Remove "/lang" prefix
+            }
+          }
+          return path; // Return as-is if no language prefix found
+        };
+
+        const baseRoute = getBaseRoute(pathname);
+
+        // Check if the base route exists in routes
+        if (baseRoute in routes) {
+          return routes[baseRoute as keyof typeof routes];
         }
 
+        // Check dynamic routes
         const dynamicRoutes = ["/blog", "/work"] as const;
         for (const route of dynamicRoutes) {
-          if (pathname?.startsWith(route) && routes[route]) {
+          if (baseRoute?.startsWith(route) && routes[route]) {
             return true;
           }
         }
@@ -85,8 +111,8 @@ const RouteGuard: React.FC<RouteGuardProps> = ({ children }) => {
   }
 
   if (!isRouteEnabled) {
-		return <NotFound />;
-	}
+    return <NotFound />;
+  }
 
   if (isPasswordRequired && !isAuthenticated) {
     return (

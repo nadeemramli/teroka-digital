@@ -20,12 +20,16 @@ export function CallToAction({
         <div className={styles.overlay} />
       </div>
 
-      <Column gap="xl" align="center" paddingY="xxl" className={styles.content}>
-        <Column gap="m" align="center" maxWidth="800px">
-          <Text variant="h2" align="center" color="on-primary">
+      <Column gap="xl" align="center" paddingY="xl" className={styles.content}>
+        <Column gap="m" align="center" maxWidth={800}>
+          <Text variant="heading-strong-l" align="center" color="on-primary">
             {title}
           </Text>
-          <Text variant="body1" align="center" color="on-primary-secondary">
+          <Text
+            variant="body-default-l"
+            align="center"
+            color="on-primary-secondary"
+          >
             {description}
           </Text>
         </Column>
@@ -33,7 +37,7 @@ export function CallToAction({
         <Button
           variant="secondary"
           href={buttonLink}
-          size="lg"
+          size="l"
           className={styles.button}
         >
           {buttonText}

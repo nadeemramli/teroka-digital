@@ -1,6 +1,6 @@
 import { home, about, blog, work, gallery } from "./content";
 import { baseURL } from "./config";
-import { SupportedLanguage } from "../[lang]/layout";
+import { SupportedLanguage } from "@/lib/i18n/types";
 
 // Language-specific metadata for each page
 export const pageMetadata = {

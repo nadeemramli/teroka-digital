@@ -96,13 +96,7 @@ export const LandingTemplate: React.FC<LandingTemplateProps> = ({
       role="main"
     >
       {/* Hero Section */}
-      <HeroSection
-        title={heroTitle}
-        description={heroDescription}
-        ctaText={heroCtaText}
-        ctaLink={heroCtaLink}
-        image={heroImage}
-      />
+      <HeroSection image={heroImage} />
 
       {/* Package Overview */}
       <PackageOverview packages={packages} />

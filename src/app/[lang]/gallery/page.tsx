@@ -4,19 +4,22 @@ import { baseURL } from "@/app/resources";
 import { gallery, person } from "@/app/resources/content";
 import { Schema } from "@/once-ui/modules";
 import { generatePageMetadata } from "@/app/resources/metadata";
-import { SupportedLanguage } from "../layout";
+import { SupportedLanguage } from "@/lib/i18n/types";
 
 interface GalleryPageProps {
-  params: {
+  params: Promise<{
     lang: SupportedLanguage;
-  };
+  }>;
 }
 
-export async function generateMetadata({ params: { lang } }: GalleryPageProps) {
+export async function generateMetadata({ params }: GalleryPageProps) {
+  const { lang } = await params;
   return generatePageMetadata("gallery", lang);
 }
 
-export default function Gallery({ params: { lang } }: GalleryPageProps) {
+export default async function Gallery({ params }: GalleryPageProps) {
+  const { lang } = await params;
+
   return (
     <Flex maxWidth="l">
       <Schema
@@ -24,11 +27,11 @@ export default function Gallery({ params: { lang } }: GalleryPageProps) {
         baseURL={baseURL}
         title={gallery.title}
         description={gallery.description}
-        path={gallery.path}
+        path={`/${lang}${gallery.path}`}
         image={`${baseURL}/og?title=${encodeURIComponent(gallery.title)}`}
         author={{
           name: person.name,
-          url: `${baseURL}${gallery.path}`,
+          url: `${baseURL}/${lang}${gallery.path}`,
           image: `${baseURL}${person.avatar}`,
         }}
       />

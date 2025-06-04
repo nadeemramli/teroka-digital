@@ -18,11 +18,11 @@ export function SocialProof({ testimonials }: SocialProofProps) {
   return (
     <section className={styles.socialProof}>
       <Column gap="xl" align="center" paddingY="xxl">
-        <Column gap="m" align="center" maxWidth="800px">
-          <Text variant="h2" align="center">
+        <Column gap="m" align="center" maxWidth={800}>
+          <Text variant="heading-strong-l" align="center">
             What Our Clients Say
           </Text>
-          <Text variant="body1" align="center" color="secondary">
+          <Text variant="body-default-l" align="center" color="secondary">
             Hear from businesses that have transformed their digital presence
             with us
           </Text>
@@ -37,7 +37,7 @@ export function SocialProof({ testimonials }: SocialProofProps) {
             >
               <Column gap="l" height="100%">
                 <Text variant="body1" className={styles.quote}>
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </Text>
 
                 <Row gap="m" align="center" className={styles.author}>

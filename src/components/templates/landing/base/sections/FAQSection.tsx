@@ -21,12 +21,12 @@ export function FAQSection({ faqs }: FAQSectionProps) {
 
   return (
     <section className={styles.faqSection}>
-      <Column gap="xl" align="center" paddingY="xxl">
-        <Column gap="m" align="center" maxWidth="800px">
-          <Text variant="h2" align="center">
+      <Column gap="xl" align="center" paddingY="xl">
+        <Column gap="m" align="center" maxWidth={800}>
+          <Text variant="heading-strong-l" align="center">
             Frequently Asked Questions
           </Text>
-          <Text variant="body1" align="center" color="secondary">
+          <Text variant="body-default-l" align="center" color="secondary">
             Find answers to common questions about our services
           </Text>
         </Column>
@@ -45,7 +45,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
                 onClick={() => toggleFaq(faq.id)}
                 aria-expanded={openFaqId === faq.id}
               >
-                <Text variant="h4" className={styles.question}>
+                <Text variant="heading-default-m" className={styles.question}>
                   {faq.question}
                 </Text>
                 <div className={styles.icon}>
@@ -68,7 +68,7 @@ export function FAQSection({ faqs }: FAQSectionProps) {
               </button>
 
               <div className={styles.answer}>
-                <Text variant="body1" color="secondary">
+                <Text variant="body-default-m" color="secondary">
                   {faq.answer}
                 </Text>
               </div>

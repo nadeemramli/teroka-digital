@@ -20,18 +20,19 @@ import { generatePageMetadata } from "@/app/resources/metadata";
 import { SupportedLanguage } from "@/lib/i18n/types";
 
 type Props = {
-  params: {
+  params: Promise<{
     lang: SupportedLanguage;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
+  }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata({ params }: Props) {
-  return generatePageMetadata("about", params.lang);
+  const { lang } = await params;
+  return generatePageMetadata("about", lang);
 }
 
 export default async function About({ params }: Props) {
-  const { lang } = params;
+  const { lang } = await params;
 
   const structure = [
     {

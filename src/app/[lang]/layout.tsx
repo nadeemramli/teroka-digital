@@ -8,7 +8,6 @@ import { baseURL, effects, style, font, home } from "@/app/resources";
 import { LanguageProvider } from "@/lib/i18n/provider";
 import { loadTranslations } from "@/lib/i18n/translations";
 import { generatePageMetadata } from "@/app/resources/metadata";
-import { ClientThemeScript } from "@/components/utils/ClientThemeScript";
 import { SupportedLanguage, supportedLanguages } from "@/lib/i18n/types";
 
 import {
@@ -41,30 +40,35 @@ const languageMetadata = {
 
 interface LanguageLayoutProps {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     lang: SupportedLanguage;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: LanguageLayoutProps) {
-  return generatePageMetadata("home", params.lang);
+  const { lang } = await params;
+  return generatePageMetadata("home", lang);
 }
 
 export default async function LanguageLayout({
   children,
   params,
 }: LanguageLayoutProps) {
-  const { lang } = params;
+  const { lang } = await params;
 
   // Load translations for the current language
   const translations = await loadTranslations(lang);
 
   return (
-    <Flex
-      suppressHydrationWarning
-      as="html"
+    <html
       lang={lang}
-      background="page"
+      className={classNames(
+        font.primary.variable,
+        font.secondary.variable,
+        font.tertiary.variable,
+        font.code.variable
+      )}
+      data-theme={style.theme}
       data-neutral={style.neutral}
       data-brand={style.brand}
       data-accent={style.accent}
@@ -73,86 +77,82 @@ export default async function LanguageLayout({
       data-border={style.border}
       data-surface={style.surface}
       data-transition={style.transition}
-      className={classNames(
-        font.primary.variable,
-        font.secondary.variable,
-        font.tertiary.variable,
-        font.code.variable
-      )}
     >
-      <head>
-        <ClientThemeScript />
-      </head>
-      <ThemeProvider>
-        <ToastProvider>
-          <LanguageProvider initialLanguage={lang} translations={translations}>
-            <Column
-              style={{ minHeight: "100vh" }}
-              as="body"
-              fillWidth
-              margin="0"
-              padding="0"
+      <head></head>
+      <body style={{ margin: 0, padding: 0 }}>
+        <ThemeProvider>
+          <ToastProvider>
+            <LanguageProvider
+              initialLanguage={lang}
+              translations={translations}
             >
-              <Background
-                position="fixed"
-                mask={{
-                  x: effects.mask.x,
-                  y: effects.mask.y,
-                  radius: effects.mask.radius,
-                  cursor: effects.mask.cursor,
-                }}
-                gradient={{
-                  display: effects.gradient.display,
-                  opacity: effects.gradient.opacity as opacity,
-                  x: effects.gradient.x,
-                  y: effects.gradient.y,
-                  width: effects.gradient.width,
-                  height: effects.gradient.height,
-                  tilt: effects.gradient.tilt,
-                  colorStart: effects.gradient.colorStart,
-                  colorEnd: effects.gradient.colorEnd,
-                }}
-                dots={{
-                  display: effects.dots.display,
-                  opacity: effects.dots.opacity as opacity,
-                  size: effects.dots.size as SpacingToken,
-                  color: effects.dots.color,
-                }}
-                grid={{
-                  display: effects.grid.display,
-                  opacity: effects.grid.opacity as opacity,
-                  color: effects.grid.color,
-                  width: effects.grid.width,
-                  height: effects.grid.height,
-                }}
-                lines={{
-                  display: effects.lines.display,
-                  opacity: effects.lines.opacity as opacity,
-                  size: effects.lines.size as SpacingToken,
-                  thickness: effects.lines.thickness,
-                  angle: effects.lines.angle,
-                  color: effects.lines.color,
-                }}
-              />
-              <Flex fillWidth minHeight="16" hide="s"></Flex>
-              <Header />
               <Flex
-                zIndex={0}
                 fillWidth
-                paddingY="l"
-                paddingX="l"
-                horizontal="center"
-                flex={1}
+                direction="column"
+                style={{ minHeight: "100vh" }}
+                background="page"
               >
-                <Flex horizontal="center" fillWidth minHeight="0">
-                  <RouteGuard>{children}</RouteGuard>
+                <Background
+                  position="fixed"
+                  mask={{
+                    x: effects.mask.x,
+                    y: effects.mask.y,
+                    radius: effects.mask.radius,
+                    cursor: effects.mask.cursor,
+                  }}
+                  gradient={{
+                    display: effects.gradient.display,
+                    opacity: effects.gradient.opacity as opacity,
+                    x: effects.gradient.x,
+                    y: effects.gradient.y,
+                    width: effects.gradient.width,
+                    height: effects.gradient.height,
+                    tilt: effects.gradient.tilt,
+                    colorStart: effects.gradient.colorStart,
+                    colorEnd: effects.gradient.colorEnd,
+                  }}
+                  dots={{
+                    display: effects.dots.display,
+                    opacity: effects.dots.opacity as opacity,
+                    size: effects.dots.size as SpacingToken,
+                    color: effects.dots.color,
+                  }}
+                  grid={{
+                    display: effects.grid.display,
+                    opacity: effects.grid.opacity as opacity,
+                    color: effects.grid.color,
+                    width: effects.grid.width,
+                    height: effects.grid.height,
+                  }}
+                  lines={{
+                    display: effects.lines.display,
+                    opacity: effects.lines.opacity as opacity,
+                    size: effects.lines.size as SpacingToken,
+                    thickness: effects.lines.thickness,
+                    angle: effects.lines.angle,
+                    color: effects.lines.color,
+                  }}
+                />
+                <Flex fillWidth minHeight="16" hide="s"></Flex>
+                <Header />
+                <Flex
+                  zIndex={0}
+                  fillWidth
+                  paddingY="l"
+                  paddingX="l"
+                  horizontal="center"
+                  flex={1}
+                >
+                  <Flex horizontal="center" fillWidth minHeight="0">
+                    <RouteGuard>{children}</RouteGuard>
+                  </Flex>
                 </Flex>
+                <Footer />
               </Flex>
-              <Footer />
-            </Column>
-          </LanguageProvider>
-        </ToastProvider>
-      </ThemeProvider>
-    </Flex>
+            </LanguageProvider>
+          </ToastProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }

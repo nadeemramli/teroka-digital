@@ -20,17 +20,18 @@ import { generatePageMetadata } from "@/app/resources/metadata";
 import { SupportedLanguage } from "@/lib/i18n/types";
 
 interface HomePageProps {
-  params: {
+  params: Promise<{
     lang: SupportedLanguage;
-  };
+  }>;
 }
 
 export async function generateMetadata({ params }: HomePageProps) {
-  return generatePageMetadata("home", params.lang);
+  const { lang } = await params;
+  return generatePageMetadata("home", lang);
 }
 
 export default async function Home({ params }: HomePageProps) {
-  const { lang } = params;
+  const { lang } = await params;
 
   return (
     <Column maxWidth="m" gap="xl" horizontal="center">
@@ -118,9 +119,11 @@ export default async function Home({ params }: HomePageProps) {
           </RevealFx>
         </Column>
       </Column>
-      <RevealFx translateY="16" delay={0.6}>
+      {/* Temporarily commenting out Projects components to isolate layout issues */}
+      {/* <RevealFx translateY="16" delay={0.6}>
         <Projects range={[1, 1]} lang={lang} />
-      </RevealFx>
+      </RevealFx> */}
+      {/* Re-enabling blog section to test layout */}
       {routes["/blog"] && (
         <Flex fillWidth gap="24" mobileDirection="column">
           <Flex flex={1} paddingLeft="l" paddingTop="24">
@@ -133,7 +136,7 @@ export default async function Home({ params }: HomePageProps) {
           </Flex>
         </Flex>
       )}
-      <Projects range={[2]} lang={lang} />
+      {/* <Projects range={[2]} lang={lang} /> */}
       {newsletter.display && <Mailchimp newsletter={newsletter} lang={lang} />}
     </Column>
   );

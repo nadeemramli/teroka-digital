@@ -9,19 +9,19 @@ const languageNames = {
 } as const;
 
 export function LanguageSwitcher() {
-  const { currentLanguage, setLanguage, supportedLanguages } = useLanguage();
+  const { language, setLanguage, supportedLanguages } = useLanguage();
 
   return (
     <div className={styles.languageSwitcher}>
       {supportedLanguages.map((lang) => (
         <Button
           key={lang}
-          variant={currentLanguage === lang ? "primary" : "secondary"}
+          variant={language === lang ? "primary" : "secondary"}
           size="s"
           onClick={() => setLanguage(lang)}
           className={styles.languageButton}
           aria-label={`Switch to ${languageNames[lang]}`}
-          aria-pressed={currentLanguage === lang}
+          aria-pressed={language === lang}
         >
           {languageNames[lang]}
         </Button>
