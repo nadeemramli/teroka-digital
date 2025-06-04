@@ -2,39 +2,39 @@
   // Use design system variables
   width: 100%;
   min-height: 100vh;
-  background: var(--surface);
+  background: var(--neutral-background-weak);
 
   // Section spacing
   > * {
-    padding: var(--space-16) 0;
+    padding: var(--static-space-64) 0;
 
-    @media (max-width: var(--breakpoint-md)) {
-      padding: var(--space-8) 0;
+    @media (max-width: 1024px) {
+      padding: var(--static-space-32) 0;
     }
   }
 
   // Alternate section backgrounds
   > *:nth-child(even) {
-    background: var(--surface-strong);
+    background: var(--neutral-background-medium);
   }
 
   // Container width
   > * > * {
-    max-width: var(--container-xl);
+    max-width: var(--responsive-width-xl);
     margin: 0 auto;
-    padding: 0 var(--space-4);
+    padding: 0 var(--static-space-16);
 
-    @media (max-width: var(--breakpoint-md)) {
-      padding: 0 var(--space-4);
+    @media (max-width: 1024px) {
+      padding: 0 var(--static-space-16);
     }
   }
 
   // Dark mode support
   @media (prefers-color-scheme: dark) {
-    background: var(--surface-dark);
+    background: var(--neutral-background-weak);
 
     > *:nth-child(even) {
-      background: var(--surface-strong-dark);
+      background: var(--neutral-background-medium);
     }
   }
 }

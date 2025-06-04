@@ -3,7 +3,6 @@
   "framework": "nextjs",
   "buildCommand": "npm run build",
   "installCommand": "npm install",
-  "regions": ["sin1", "hkg1"],
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 10
