@@ -25,11 +25,13 @@ interface HomePageProps {
   };
 }
 
-export async function generateMetadata({ params: { lang } }: HomePageProps) {
-  return generatePageMetadata("home", lang);
+export async function generateMetadata({ params }: HomePageProps) {
+  return generatePageMetadata("home", params.lang);
 }
 
-export default function Home({ params: { lang } }: HomePageProps) {
+export default async function Home({ params }: HomePageProps) {
+  const { lang } = params;
+
   return (
     <Column maxWidth="m" gap="xl" horizontal="center">
       <Schema

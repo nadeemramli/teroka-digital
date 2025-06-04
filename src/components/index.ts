@@ -1,5 +1,5 @@
 // Base Components
-export { Header, TimeDisplay } from './base/Header';
+export { Header } from './base/Header';
 export { Footer } from './base/Footer';
 
 // Utility Components

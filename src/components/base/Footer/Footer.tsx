@@ -81,12 +81,12 @@ export const Footer = () => {
           {Object.values(footerNavigation).map((section) => (
             <Flex key={section.key} direction="column" gap="m">
               <Text variant="label-default-s" onBackground="neutral-weak">
-                {t(`footer.${section.key}.title`)}
+                {t(`common.footer.${section.key}.title`)}
               </Text>
               <Flex direction="column" gap="s">
                 {section.items.map((item) => (
                   <SmartLink key={item.key} href={item.href}>
-                    {t(`footer.${section.key}.${item.key}`)}
+                    {t(`common.footer.${section.key}.items.${item.key}`)}
                   </SmartLink>
                 ))}
               </Flex>
@@ -95,7 +95,7 @@ export const Footer = () => {
         </Flex>
         <Flex direction="column" gap="m" horizontal="end">
           <Text variant="label-default-s" onBackground="neutral-weak">
-            {t("footer.social.title")}
+            Social
           </Text>
           <Flex gap="s">
             {social.map(

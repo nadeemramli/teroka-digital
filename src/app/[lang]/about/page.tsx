@@ -26,11 +26,13 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata({ params: { lang } }: Props) {
-  return generatePageMetadata("about", lang);
+export async function generateMetadata({ params }: Props) {
+  return generatePageMetadata("about", params.lang);
 }
 
-export default async function About({ params: { lang } }: Props) {
+export default async function About({ params }: Props) {
+  const { lang } = params;
+
   const structure = [
     {
       title: about.intro.title,

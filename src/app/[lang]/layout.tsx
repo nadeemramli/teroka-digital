@@ -46,16 +46,16 @@ interface LanguageLayoutProps {
   };
 }
 
-export async function generateMetadata({
-  params: { lang },
-}: LanguageLayoutProps) {
-  return generatePageMetadata("home", lang);
+export async function generateMetadata({ params }: LanguageLayoutProps) {
+  return generatePageMetadata("home", params.lang);
 }
 
 export default async function LanguageLayout({
   children,
-  params: { lang },
+  params,
 }: LanguageLayoutProps) {
+  const { lang } = params;
+
   // Load translations for the current language
   const translations = await loadTranslations(lang);
 
