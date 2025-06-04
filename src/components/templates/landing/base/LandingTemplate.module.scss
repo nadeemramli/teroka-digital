@@ -1,0 +1,40 @@
+.landingTemplate {
+  // Use design system variables
+  width: 100%;
+  min-height: 100vh;
+  background: var(--surface);
+
+  // Section spacing
+  > * {
+    padding: var(--space-16) 0;
+
+    @media (max-width: var(--breakpoint-md)) {
+      padding: var(--space-8) 0;
+    }
+  }
+
+  // Alternate section backgrounds
+  > *:nth-child(even) {
+    background: var(--surface-strong);
+  }
+
+  // Container width
+  > * > * {
+    max-width: var(--container-xl);
+    margin: 0 auto;
+    padding: 0 var(--space-4);
+
+    @media (max-width: var(--breakpoint-md)) {
+      padding: 0 var(--space-4);
+    }
+  }
+
+  // Dark mode support
+  @media (prefers-color-scheme: dark) {
+    background: var(--surface-dark);
+
+    > *:nth-child(even) {
+      background: var(--surface-strong-dark);
+    }
+  }
+}

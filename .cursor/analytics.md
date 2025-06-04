@@ -5,11 +5,12 @@ Tracking usage of Cursor rules in the project.
 ## Rule Usage Count
 
 create-rules.mdc: 1
-vision-alignment.mdc: 2
-memory.mdc: 1
-rule-analytics.mdc: 4
-task-lists.mdc: 1
-changelog.mdc: 1
+vision-alignment.mdc: 3
+memory.mdc: 2
+rule-analytics.mdc: 1
+task-lists.mdc: 2
+changelog.mdc: 2
+page-templates.mdc: 1
 
 ## Last Updated
 - Date: 2024-03-19

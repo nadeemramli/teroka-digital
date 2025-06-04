@@ -1,34 +1,37 @@
 "use client";
 
-import Masonry from "react-masonry-css";
-import { SmartImage } from "@/once-ui/components";
-import styles from "./Gallery.module.scss";
+import { Grid, SmartImage } from "@/once-ui/components";
 import { gallery } from "@/app/resources/content";
+import styles from "./MasonryGrid.module.scss";
 
 export default function MasonryGrid() {
-  const breakpointColumnsObj = {
-    default: 2,
-    720: 1,
-  };
+  const horizontalImages = gallery.images.filter(
+    (img) => img.orientation === "horizontal"
+  );
+  const verticalImages = gallery.images.filter(
+    (img) => img.orientation === "vertical"
+  );
 
   return (
-    <Masonry
-      breakpointCols={breakpointColumnsObj}
-      className={styles.masonryGrid}
-      columnClassName={styles.masonryGridColumn}
+    <Grid
+      columns="3"
+      mobileColumns="1"
+      tabletColumns="2"
+      gap="16"
+      fillWidth
+      className={styles.masonry}
     >
       {gallery.images.map((image, index) => (
         <SmartImage
-          priority={index < 10}
-          sizes="(max-width: 560px) 100vw, 50vw"
-          key={index}
-          radius="m"
-          aspectRatio={image.orientation === "horizontal" ? "16 / 9" : "3 / 4"}
+          key={image.src}
           src={image.src}
           alt={image.alt}
-          className={styles.gridItem}
+          aspectRatio={image.orientation === "horizontal" ? "16/9" : "3/4"}
+          radius="l"
+          className={styles.image}
+          priority={index < 4}
         />
       ))}
-    </Masonry>
+    </Grid>
   );
 }

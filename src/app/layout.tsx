@@ -6,7 +6,13 @@ import classNames from "classnames";
 import { Footer, Header, RouteGuard } from "@/components";
 import { baseURL, effects, style, font, home } from "@/app/resources";
 
-import { Background, Column, Flex, ThemeProvider, ToastProvider } from "@/once-ui/components";
+import {
+  Background,
+  Column,
+  Flex,
+  ThemeProvider,
+  ToastProvider,
+} from "@/once-ui/components";
 import { opacity, SpacingToken } from "@/once-ui/types";
 import { Meta } from "@/once-ui/modules";
 
@@ -24,12 +30,11 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-export default async function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <Flex
       suppressHydrationWarning
       as="html"
-      lang="en"
       background="page"
       data-neutral={style.neutral}
       data-brand={style.brand}
@@ -43,45 +48,28 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         font.primary.variable,
         font.secondary.variable,
         font.tertiary.variable,
-        font.code.variable,
+        font.code.variable
       )}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function() {
-                try {
-                  const theme = localStorage.getItem('theme') || 'system';
-                  const root = document.documentElement;
-                  if (theme === 'system') {
-                    const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    root.setAttribute('data-theme', isDark ? 'dark' : 'light');
-                  } else {
-                    root.setAttribute('data-theme', theme);
-                  }
-                } catch (e) {
-                  document.documentElement.setAttribute('data-theme', 'dark');
-                }
-              })();
-            `,
-          }}
-        />
-      </head>
       <ThemeProvider>
         <ToastProvider>
-          <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
+          <Column
+            style={{ minHeight: "100vh" }}
+            as="body"
+            fillWidth
+            margin="0"
+            padding="0"
+          >
             <Background
               position="fixed"
               mask={{
                 x: effects.mask.x,
                 y: effects.mask.y,
                 radius: effects.mask.radius,
-                cursor: effects.mask.cursor
+                cursor: effects.mask.cursor,
               }}
               gradient={{
                 display: effects.gradient.display,
-                opacity: effects.gradient.opacity as opacity,
                 x: effects.gradient.x,
                 y: effects.gradient.y,
                 width: effects.gradient.width,
@@ -112,21 +100,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
                 color: effects.lines.color,
               }}
             />
-            <Flex fillWidth minHeight="16" hide="s"></Flex>
-            <Header />
-            <Flex
-              zIndex={0}
-              fillWidth
-              paddingY="l"
-              paddingX="l"
-              horizontal="center"
-              flex={1}
-            >
-              <Flex horizontal="center" fillWidth minHeight="0">
-                <RouteGuard>{children}</RouteGuard>
-              </Flex>
-            </Flex>
-            <Footer />
+            {children}
           </Column>
         </ToastProvider>
       </ThemeProvider>

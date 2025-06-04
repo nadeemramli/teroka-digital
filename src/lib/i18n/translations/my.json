@@ -1,0 +1,174 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Utama",
+      "about": "Tentang Kami",
+      "services": "Perkhidmatan",
+      "packages": "Pakej",
+      "contact": "Hubungi",
+      "getStarted": "Mulakan"
+    },
+    "buttons": {
+      "learnMore": "Ketahui Lebih Lanjut",
+      "contactUs": "Hubungi Kami",
+      "getStarted": "Mulakan",
+      "viewPackages": "Lihat Pakej",
+      "scheduleCall": "Jadualkan Panggilan"
+    },
+    "footer": {
+      "description": "Memperkasakan perniagaan tradisional di Malaysia dengan penyelesaian pemasaran digital yang berkesan.",
+      "copyright": "© {{year}} Teroka Digital. Hak Cipta Terpelihara.",
+      "builtWith": "Dibina dengan",
+      "services": {
+        "title": "Perkhidmatan",
+        "items": {
+          "website": "Pembangunan Laman Web",
+          "ads": "Pengurusan Iklan",
+          "creative": "Strategi Kreatif",
+          "content": "Penjenamaan Kandungan",
+          "experience": "Pengalaman Pelanggan"
+        }
+      },
+      "industries": {
+        "title": "Industri",
+        "items": {
+          "dental": "Pergigian",
+          "restaurant": "Restoran",
+          "legal": "Undang-undang",
+          "interior": "Reka Bentuk Dalaman",
+          "professional": "Perkhidmatan Profesional",
+          "retail": "Runcit"
+        }
+      },
+      "resources": {
+        "title": "Sumber",
+        "items": {
+          "audit": "Audit Pemasaran",
+          "mistakes": "5 Kesilapan Pemasaran",
+          "templates": "Templat Industri",
+          "seo": "Senarai Semak SEO Tempatan",
+          "calendar": "Kalendar Kandungan",
+          "calculator": "Kalkulator ROI"
+        }
+      },
+      "company": {
+        "title": "Syarikat",
+        "items": {
+          "about": "Tentang Kami",
+          "cases": "Kajian Kes",
+          "blog": "Blog",
+          "contact": "Hubungi",
+          "start": "Mulakan"
+        }
+      },
+      "legal": {
+        "title": "Undang-undang",
+        "items": {
+          "privacy": "Dasar Privasi",
+          "terms": "Terma Perkhidmatan",
+          "refund": "Dasar Bayaran Balik",
+          "cookies": "Dasar Kuki"
+        }
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Penyelesaian Pemasaran Digital untuk Perniagaan Tradisional",
+      "subtitle": "Kami membantu perniagaan tradisional di Malaysia berkembang dengan penyelesaian pemasaran digital yang berkesan",
+      "cta": "Mulakan Sekarang"
+    },
+    "packages": {
+      "title": "Pakej Kami",
+      "subtitle": "Pilih pakej yang sesuai dengan keperluan perniagaan anda",
+      "tryOut": {
+        "title": "Cuba",
+        "price": "RM4,450",
+        "description": "Penyelesaian pemasaran asas untuk perniagaan yang baru memulakan perjalanan digital",
+        "features": {
+          "website": "Pembangunan Laman Web Asas",
+          "seo": "Persediaan SEO Tempatan",
+          "social": "Persediaan Media Sosial",
+          "content": "Penciptaan Kandungan Asas",
+          "analytics": "Persediaan Analitik"
+        }
+      },
+      "growth": {
+        "title": "Pertumbuhan",
+        "price": "RM7,500",
+        "description": "Pakej pemasaran komprehensif untuk perniagaan yang bersedia untuk berkembang",
+        "features": {
+          "website": "Pembangunan Laman Web Lanjutan",
+          "seo": "Strategi SEO Penuh",
+          "social": "Pengurusan Media Sosial",
+          "content": "Strategi & Penciptaan Kandungan",
+          "ads": "Iklan Google & Facebook",
+          "analytics": "Analitik & Laporan Lanjutan"
+        }
+      },
+      "partner": {
+        "title": "Rakan Kongsi",
+        "price": "Khas",
+        "description": "Penyelesaian tersuai untuk perniagaan yang mantap yang mencari perkongsian perkhidmatan penuh",
+        "features": {
+          "website": "Pembangunan Laman Web Tersuai",
+          "seo": "Strategi SEO Perusahaan",
+          "social": "Strategi Media Sosial Penuh",
+          "content": "Penciptaan Kandungan Premium",
+          "ads": "Pengiklanan Digital Penuh",
+          "analytics": "Analitik Perusahaan",
+          "strategy": "Perundingan Strategi Perniagaan"
+        }
+      }
+    },
+    "industries": {
+      "title": "Penyelesaian Industri",
+      "subtitle": "Penyelesaian pemasaran digital yang disesuaikan untuk industri anda",
+      "viewMore": "Lihat Lagi"
+    },
+    "testimonials": {
+      "title": "Apa Kata Pelanggan Kami",
+      "subtitle": "Dengari dari perniagaan yang telah mengubah kehadiran digital mereka dengan kami"
+    },
+    "results": {
+      "title": "Keputusan Terbukti",
+      "subtitle": "Lihat bagaimana kami telah membantu perniagaan mencapai matlamat mereka"
+    },
+    "faq": {
+      "title": "Soalan Lazim",
+      "subtitle": "Cari jawapan kepada soalan biasa tentang perkhidmatan kami",
+      "questions": {
+        "pricing": {
+          "question": "Berapakah kos perkhidmatan anda?",
+          "answer": "Kami menawarkan tiga pakej utama: Cuba (RM4,450), Pertumbuhan (RM7,500), dan Rakan Kongsi (Harga khas). Setiap pakej direka untuk memenuhi keperluan dan bajet perniagaan yang berbeza."
+        },
+        "timeline": {
+          "question": "Berapa lama untuk melihat keputusan?",
+          "answer": "Walaupun beberapa keputusan dapat dilihat dalam bulan pertama, peningkatan yang ketara biasanya mengambil masa 3-6 bulan. Kami memberi tumpuan kepada pertumbuhan jangka panjang yang mampan."
+        },
+        "process": {
+          "question": "Apakah proses anda?",
+          "answer": "Proses kami bermula dengan analisis menyeluruh perniagaan anda, diikuti dengan pembangunan strategi, pelaksanaan, dan pengoptimuman berterusan berdasarkan data dan keputusan."
+        },
+        "customization": {
+          "question": "Bolehkah saya menyesuaikan pakej?",
+          "answer": "Ya, pakej kami boleh disesuaikan untuk lebih sesuai dengan keperluan khusus anda. Hubungi kami untuk membincangkan keperluan anda dan kami akan membuat penyelesaian yang disesuaikan."
+        },
+        "support": {
+          "question": "Apakah jenis sokongan yang anda sediakan?",
+          "answer": "Kami menyediakan sokongan khusus melalui mesyuarat berkala, e-mel, dan telefon. Pasukan kami sentiasa tersedia untuk menangani soalan dan kebimbangan anda."
+        }
+      }
+    },
+    "cta": {
+      "title": "Bersedia untuk Mengembangkan Perniagaan Anda?",
+      "subtitle": "Mari berbincang bagaimana kami boleh membantu anda mencapai matlamat perniagaan anda",
+      "button": "Jadualkan Perundingan Percuma"
+    }
+  },
+  "errors": {
+    "notFound": "Halaman tidak dijumpai",
+    "serverError": "Ralat telah berlaku",
+    "tryAgain": "Sila cuba lagi kemudian"
+  }
+} 

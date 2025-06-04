@@ -1,0 +1,174 @@
+{
+  "common": {
+    "navigation": {
+      "home": "Home",
+      "about": "About",
+      "services": "Services",
+      "packages": "Packages",
+      "contact": "Contact",
+      "getStarted": "Get Started"
+    },
+    "buttons": {
+      "learnMore": "Learn More",
+      "contactUs": "Contact Us",
+      "getStarted": "Get Started",
+      "viewPackages": "View Packages",
+      "scheduleCall": "Schedule a Call"
+    },
+    "footer": {
+      "description": "Empowering traditional businesses in Malaysia with modern digital marketing solutions.",
+      "copyright": "© {{year}} Teroka Digital. All rights reserved.",
+      "builtWith": "Built with",
+      "services": {
+        "title": "Services",
+        "items": {
+          "website": "Website Development",
+          "ads": "Ads Management",
+          "creative": "Creative Strategy",
+          "content": "Content Branding",
+          "experience": "Client Experience"
+        }
+      },
+      "industries": {
+        "title": "Industries",
+        "items": {
+          "dental": "Dental",
+          "restaurant": "Restaurant",
+          "legal": "Legal",
+          "interior": "Interior Design",
+          "professional": "Professional Services",
+          "retail": "Retail"
+        }
+      },
+      "resources": {
+        "title": "Resources",
+        "items": {
+          "audit": "Marketing Audit",
+          "mistakes": "5 Marketing Mistakes",
+          "templates": "Industry Templates",
+          "seo": "Local SEO Checklist",
+          "calendar": "Content Calendar",
+          "calculator": "ROI Calculator"
+        }
+      },
+      "company": {
+        "title": "Company",
+        "items": {
+          "about": "About",
+          "cases": "Case Studies",
+          "blog": "Blog",
+          "contact": "Contact",
+          "start": "Get Started"
+        }
+      },
+      "legal": {
+        "title": "Legal",
+        "items": {
+          "privacy": "Privacy Policy",
+          "terms": "Terms of Service",
+          "refund": "Refund Policy",
+          "cookies": "Cookie Policy"
+        }
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Digital Marketing Solutions for Traditional Businesses",
+      "subtitle": "We help traditional businesses in Malaysia grow with effective digital marketing solutions",
+      "cta": "Get Started"
+    },
+    "packages": {
+      "title": "Our Packages",
+      "subtitle": "Choose the right package for your business needs",
+      "tryOut": {
+        "title": "Try Out",
+        "price": "RM4,450",
+        "description": "Basic marketing solutions for businesses starting their digital journey",
+        "features": {
+          "website": "Basic Website Development",
+          "seo": "Local SEO Setup",
+          "social": "Social Media Setup",
+          "content": "Basic Content Creation",
+          "analytics": "Analytics Setup"
+        }
+      },
+      "growth": {
+        "title": "Growth",
+        "price": "RM7,500",
+        "description": "Comprehensive marketing package for businesses ready to scale",
+        "features": {
+          "website": "Advanced Website Development",
+          "seo": "Full SEO Strategy",
+          "social": "Social Media Management",
+          "content": "Content Strategy & Creation",
+          "ads": "Google & Facebook Ads",
+          "analytics": "Advanced Analytics & Reporting"
+        }
+      },
+      "partner": {
+        "title": "Partner",
+        "price": "Custom",
+        "description": "Tailored solutions for established businesses seeking full-service partnership",
+        "features": {
+          "website": "Custom Website Development",
+          "seo": "Enterprise SEO Strategy",
+          "social": "Full Social Media Strategy",
+          "content": "Premium Content Creation",
+          "ads": "Full Digital Advertising",
+          "analytics": "Enterprise Analytics",
+          "strategy": "Business Strategy Consulting"
+        }
+      }
+    },
+    "industries": {
+      "title": "Industry Solutions",
+      "subtitle": "Tailored digital marketing solutions for your industry",
+      "viewMore": "View More"
+    },
+    "testimonials": {
+      "title": "What Our Clients Say",
+      "subtitle": "Hear from businesses that have transformed their digital presence with us"
+    },
+    "results": {
+      "title": "Proven Results",
+      "subtitle": "See how we've helped businesses achieve their goals"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about our services",
+      "questions": {
+        "pricing": {
+          "question": "How much do your services cost?",
+          "answer": "We offer three main packages: Try Out (RM4,450), Growth (RM7,500), and Partner (Custom pricing). Each package is designed to meet different business needs and budgets."
+        },
+        "timeline": {
+          "question": "How long does it take to see results?",
+          "answer": "While some results can be seen within the first month, significant improvements typically take 3-6 months. We focus on sustainable, long-term growth rather than quick wins."
+        },
+        "process": {
+          "question": "What is your process?",
+          "answer": "Our process starts with a thorough analysis of your business, followed by strategy development, implementation, and continuous optimization based on data and results."
+        },
+        "customization": {
+          "question": "Can I customize the packages?",
+          "answer": "Yes, our packages can be customized to better suit your specific needs. Contact us to discuss your requirements and we'll create a tailored solution."
+        },
+        "support": {
+          "question": "What kind of support do you provide?",
+          "answer": "We provide dedicated support through regular meetings, email, and phone. Our team is always available to address your questions and concerns."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Grow Your Business?",
+      "subtitle": "Let's discuss how we can help you achieve your business goals",
+      "button": "Schedule a Free Consultation"
+    }
+  },
+  "errors": {
+    "notFound": "Page not found",
+    "serverError": "Something went wrong",
+    "tryAgain": "Please try again later"
+  }
+} 

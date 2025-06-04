@@ -1,0 +1,36 @@
+.languageSwitcher {
+  display: flex;
+  gap: var(--spacing-xs);
+  align-items: center;
+  padding: var(--spacing-xs);
+  background: var(--color-surface);
+  border-radius: var(--radius-m);
+  box-shadow: var(--shadow-s);
+}
+
+.languageButton {
+  min-width: 100px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .languageSwitcher {
+    flex-direction: column;
+    gap: var(--spacing-s);
+    padding: var(--spacing-s);
+  }
+
+  .languageButton {
+    width: 100%;
+  }
+} 

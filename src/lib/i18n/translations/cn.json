@@ -1,0 +1,174 @@
+{
+  "common": {
+    "navigation": {
+      "home": "首页",
+      "about": "关于我们",
+      "services": "服务",
+      "packages": "套餐",
+      "contact": "联系我们",
+      "getStarted": "开始使用"
+    },
+    "buttons": {
+      "learnMore": "了解更多",
+      "contactUs": "联系我们",
+      "getStarted": "开始使用",
+      "viewPackages": "查看套餐",
+      "scheduleCall": "预约通话"
+    },
+    "footer": {
+      "description": "通过有效的数字营销解决方案，助力马来西亚传统企业发展。",
+      "copyright": "© {{year}} Teroka Digital. 保留所有权利。",
+      "builtWith": "使用",
+      "services": {
+        "title": "服务",
+        "items": {
+          "website": "网站开发",
+          "ads": "广告管理",
+          "creative": "创意策略",
+          "content": "内容品牌",
+          "experience": "客户体验"
+        }
+      },
+      "industries": {
+        "title": "行业",
+        "items": {
+          "dental": "牙科",
+          "restaurant": "餐饮",
+          "legal": "法律",
+          "interior": "室内设计",
+          "professional": "专业服务",
+          "retail": "零售"
+        }
+      },
+      "resources": {
+        "title": "资源",
+        "items": {
+          "audit": "营销审计",
+          "mistakes": "5个营销错误",
+          "templates": "行业模板",
+          "seo": "本地SEO清单",
+          "calendar": "内容日历",
+          "calculator": "ROI计算器"
+        }
+      },
+      "company": {
+        "title": "公司",
+        "items": {
+          "about": "关于我们",
+          "cases": "案例研究",
+          "blog": "博客",
+          "contact": "联系我们",
+          "start": "开始使用"
+        }
+      },
+      "legal": {
+        "title": "法律",
+        "items": {
+          "privacy": "隐私政策",
+          "terms": "服务条款",
+          "refund": "退款政策",
+          "cookies": "Cookie政策"
+        }
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "传统企业的数字营销解决方案",
+      "subtitle": "我们帮助马来西亚的传统企业通过有效的数字营销解决方案实现增长",
+      "cta": "立即开始"
+    },
+    "packages": {
+      "title": "我们的套餐",
+      "subtitle": "选择适合您业务需求的套餐",
+      "tryOut": {
+        "title": "试用",
+        "price": "RM4,450",
+        "description": "为刚开始数字之旅的企业提供基础营销解决方案",
+        "features": {
+          "website": "基础网站开发",
+          "seo": "本地SEO设置",
+          "social": "社交媒体设置",
+          "content": "基础内容创作",
+          "analytics": "分析设置"
+        }
+      },
+      "growth": {
+        "title": "成长",
+        "price": "RM7,500",
+        "description": "为准备扩展的企业提供全面的营销套餐",
+        "features": {
+          "website": "高级网站开发",
+          "seo": "完整SEO策略",
+          "social": "社交媒体管理",
+          "content": "内容策略与创作",
+          "ads": "谷歌和脸书广告",
+          "analytics": "高级分析与报告"
+        }
+      },
+      "partner": {
+        "title": "合作伙伴",
+        "price": "定制",
+        "description": "为寻求全方位服务合作的成熟企业提供定制解决方案",
+        "features": {
+          "website": "定制网站开发",
+          "seo": "企业级SEO策略",
+          "social": "完整社交媒体策略",
+          "content": "优质内容创作",
+          "ads": "全方位数字广告",
+          "analytics": "企业级分析",
+          "strategy": "商业战略咨询"
+        }
+      }
+    },
+    "industries": {
+      "title": "行业解决方案",
+      "subtitle": "为您的行业量身定制的数字营销解决方案",
+      "viewMore": "查看更多"
+    },
+    "testimonials": {
+      "title": "客户评价",
+      "subtitle": "听听通过我们改变数字形象的企业怎么说"
+    },
+    "results": {
+      "title": "已证实的成果",
+      "subtitle": "了解我们如何帮助企业实现目标"
+    },
+    "faq": {
+      "title": "常见问题",
+      "subtitle": "查找关于我们服务的常见问题答案",
+      "questions": {
+        "pricing": {
+          "question": "你们的服务费用是多少？",
+          "answer": "我们提供三个主要套餐：试用（RM4,450）、成长（RM7,500）和合作伙伴（定制价格）。每个套餐都旨在满足不同的业务需求和预算。"
+        },
+        "timeline": {
+          "question": "需要多长时间才能看到效果？",
+          "answer": "虽然一些效果可以在第一个月内看到，但显著的改善通常需要3-6个月。我们专注于可持续的长期增长，而不是快速见效。"
+        },
+        "process": {
+          "question": "你们的流程是什么？",
+          "answer": "我们的流程从对您的业务进行全面分析开始，然后是策略制定、实施，以及基于数据和结果的持续优化。"
+        },
+        "customization": {
+          "question": "我可以定制套餐吗？",
+          "answer": "是的，我们的套餐可以根据您的具体需求进行定制。请联系我们讨论您的需求，我们将为您创建量身定制的解决方案。"
+        },
+        "support": {
+          "question": "你们提供什么样的支持？",
+          "answer": "我们通过定期会议、电子邮件和电话提供专门支持。我们的团队随时准备解答您的问题和疑虑。"
+        }
+      }
+    },
+    "cta": {
+      "title": "准备好发展您的业务了吗？",
+      "subtitle": "让我们讨论如何帮助您实现业务目标",
+      "button": "预约免费咨询"
+    }
+  },
+  "errors": {
+    "notFound": "页面未找到",
+    "serverError": "发生错误",
+    "tryAgain": "请稍后再试"
+  }
+} 

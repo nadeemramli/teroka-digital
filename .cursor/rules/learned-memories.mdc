@@ -20,6 +20,17 @@ This file stores project-specific knowledge, conventions, and user preferences l
 - **Analytics**: Tracking rule usage in `.cursor/analytics.md`
 - **Memory Management**: Storing learned knowledge in `learned-memories.mdc`
 
+## Template Implementation Decisions
+
+- **Base Template Structure**: Using modular, reusable components in `src/components/templates/`
+- **Component Organization**: Templates organized by page type (landing, service, location, resource, utility)
+- **Design System Integration**: Using Once UI components with custom design system variables
+- **Responsive Design**: Mobile-first approach with breakpoints defined in design system
+- **Accessibility**: ARIA labels and semantic HTML in all template components
+- **Dark Mode**: Implemented using CSS variables and media queries
+- **Type Safety**: TypeScript interfaces for all component props
+- **Performance**: Image optimization and lazy loading for media content
+
 ## Project Conventions
 
 - **Rule Creation**: All rules must be in `.cursor/rules/` with `.mdc` extension
@@ -40,3 +51,9 @@ This file stores project-specific knowledge, conventions, and user preferences l
 - Created comprehensive vision alignment rule to ensure all development aligns with business strategy
 - Established rules system with analytics tracking and memory management
 - Implemented core rules for project governance and consistency
+- Implemented base landing template with focus on simplicity and conversion
+- Established component organization following sitemap structure
+- Created reusable section components for consistent page development
+- Added TypeScript interfaces for type-safe component props
+- Implemented responsive design with mobile-first approach
+- Added dark mode support using CSS variables
