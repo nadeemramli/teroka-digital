@@ -1,0 +1,106 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Vision Alignment Rule
+
+This rule ensures that all development work, prompts, and changes align with Teroka Digital's vision and positioning strategy as defined in `vision.md`.
+
+## Core Principles
+
+1. **Target Audience Focus**
+   - All features and content must serve the "Overwhelmed Expert" avatar
+   - Solutions should address the pain points of traditional business owners
+   - Content must resonate with Malaysian business owners (35-55 age group)
+
+2. **Value Proposition Alignment**
+   - Every feature should support the primary UVP: "We turn traditional business owners into marketing winners with done-for-you content and creative that actually converts"
+   - Solutions should emphasize the "Just Enough" philosophy
+   - Features must align with the productized service model
+
+3. **Package Structure Compliance**
+   - Development should support the three-tier package system:
+     - Try Out Package (RM4,450)
+     - Growth Package (RM7,500) - HERO PACKAGE
+     - Partner Package (Custom)
+   - Features must be mappable to specific package offerings
+   - No feature should contradict the package positioning
+
+## Implementation Guidelines
+
+### For Development Work
+1. Before starting any new feature or component:
+   - Review relevant sections of `vision.md`
+   - Ensure alignment with target audience needs
+   - Verify compatibility with package structure
+   - Check against key differentiators
+
+2. When writing code:
+   - Use terminology consistent with vision document
+   - Implement features that support the "Traditional Business Expertise" differentiator
+   - Ensure UI/UX reflects the "Productized Simplicity" principle
+
+### For Prompts and AI Interactions
+1. Always include context from `vision.md`:
+   - Reference target audience
+   - Align with UVP
+   - Consider package structure
+   - Maintain positioning strategy
+
+2. When requesting features or changes:
+   - Specify which package the feature serves
+   - Explain how it addresses target audience pain points
+   - Demonstrate alignment with key differentiators
+
+## Validation Checklist
+
+Before proceeding with any development or prompt, verify:
+
+- [ ] Does this align with the target audience's needs?
+- [ ] Does it support the primary UVP?
+- [ ] Which package does this feature serve?
+- [ ] Does it maintain the "Just Enough" philosophy?
+- [ ] Is it consistent with the local market focus?
+- [ ] Does it support the productized service model?
+
+## Examples
+
+### Good Example
+```typescript
+// Feature: Lead Capture Form
+// Aligns with Growth Package (RM7,500)
+// Serves "Overwhelmed Expert" by automating lead collection
+// Supports UVP by converting visitors into leads
+
+interface LeadFormProps {
+  packageType: 'try-out' | 'growth' | 'partner';
+  industry: 'dental' | 'legal' | 'f&b' | 'interior-design';
+  // ... other props
+}
+```
+
+### Bad Example
+```typescript
+// Feature: Complex Marketing Dashboard
+// ❌ Too complex for target audience
+// ❌ Doesn't align with "Just Enough" philosophy
+// ❌ Requires technical expertise
+
+interface MarketingDashboardProps {
+  analytics: ComplexAnalytics;
+  automationRules: AdvancedRules;
+  // ... too complex for traditional business owners
+}
+```
+
+## References
+
+Always refer to these key sections in `vision.md`:
+- Primary UVP Statement
+- Target Audience Deep Dive
+- Package Positioning
+- Key Differentiators
+- Messaging Framework
+
+Remember: Every line of code and every feature should serve the goal of turning traditional business owners into marketing winners through done-for-you content and creative solutions.

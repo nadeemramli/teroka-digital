@@ -1,0 +1,180 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Page Template Management
+
+Guidelines for systematic page creation using template-based approach.
+
+## Page Template Structure
+
+1. Create base templates in `src/app/templates/`:
+   ```
+   src/app/templates/
+   ├── base/                    # Base templates
+   │   ├── page.tsx            # Basic page template
+   │   ├── layout.tsx          # Layout template
+   │   └── metadata.ts         # Metadata template
+   ├── sections/               # Reusable sections
+   │   ├── hero/              # Hero section templates
+   │   ├── features/          # Feature section templates
+   │   ├── pricing/           # Pricing section templates
+   │   └── contact/           # Contact section templates
+   └── components/            # Page-specific components
+       ├── industry/          # Industry page components
+       ├── location/          # Location page components
+       └── service/           # Service page components
+   ```
+
+2. Template Categories:
+   ```typescript
+   // Template types for different page categories
+   type TemplateType = 
+     | 'landing'              // Homepage, industry pages
+     | 'service'              // Service deep-dive pages
+     | 'location'             // Location-specific pages
+     | 'resource'             // Blog, guides, resources
+     | 'utility'              // Contact, about, legal
+   ```
+
+## Page Creation Process
+
+1. **Template Selection**:
+   ```typescript
+   // Example template configuration
+   interface PageConfig {
+     template: TemplateType;
+     sections: string[];      // Required sections
+     metadata: MetadataConfig;
+     components: string[];    // Required components
+   }
+   ```
+
+2. **Page Generation Steps**:
+   a. Select appropriate template
+   b. Configure metadata
+   c. Add required sections
+   d. Customize components
+   e. Add content
+   f. Test and validate
+
+3. **Content Structure**:
+   ```typescript
+   // Content configuration for each page
+   interface PageContent {
+     metadata: {
+       title: string;
+       description: string;
+       keywords: string[];
+     };
+     sections: {
+       [key: string]: SectionContent;
+     };
+     components: {
+       [key: string]: ComponentContent;
+     };
+   }
+   ```
+
+## Implementation Guidelines
+
+1. **Template-Based Development**:
+   - Use base templates for consistent structure
+   - Create reusable sections
+   - Implement component variations
+   - Maintain consistent styling
+
+2. **Content Management**:
+   - Store content in `src/app/resources/content/`
+   - Use MDX for rich content
+   - Implement content validation
+   - Support multi-language content
+
+3. **Page Generation Script**:
+   ```typescript
+   // Example page generation function
+   async function generatePage(
+     slug: string,
+     config: PageConfig,
+     content: PageContent
+   ) {
+     // 1. Create page directory
+     // 2. Copy template files
+     // 3. Configure metadata
+     // 4. Add sections
+     // 5. Add components
+     // 6. Add content
+     // 7. Generate sitemap entry
+   }
+   ```
+
+## Sitemap Management
+
+1. **Sitemap Structure**:
+   ```typescript
+   // Sitemap configuration
+   interface SitemapConfig {
+     pages: {
+       [key: string]: {
+         priority: number;
+         changefreq: string;
+         lastmod?: string;
+       };
+     };
+     languages: string[];
+     exclude: string[];
+   }
+   ```
+
+2. **Sitemap Generation**:
+   - Generate XML sitemap
+   - Create visual sitemap
+   - Update on page creation
+   - Support multi-language
+
+## Example Usage
+
+```typescript
+// Example: Creating an industry page
+const dentalPageConfig: PageConfig = {
+  template: 'landing',
+  sections: ['hero', 'features', 'pricing', 'contact'],
+  metadata: {
+    title: 'Dental Clinic Marketing Services',
+    description: '...',
+    keywords: ['dental', 'marketing', 'malaysia']
+  },
+  components: ['industrySelector', 'packageComparison']
+};
+
+// Generate the page
+await generatePage('industry/dental', dentalPageConfig, dentalContent);
+```
+
+## AI Instructions
+
+When creating new pages, the AI should:
+
+1. **Template Selection**:
+   - Choose appropriate template type
+   - Select required sections
+   - Configure components
+
+2. **Content Management**:
+   - Create content structure
+   - Implement multi-language support
+   - Validate content requirements
+
+3. **Page Generation**:
+   - Follow template structure
+   - Implement required sections
+   - Add necessary components
+   - Update sitemap
+
+4. **Quality Assurance**:
+   - Verify page structure
+   - Check content completeness
+   - Validate metadata
+   - Test responsiveness
+   - Verify SEO requirements

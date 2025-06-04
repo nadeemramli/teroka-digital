@@ -1,0 +1,42 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Project Memory
+
+This file stores project-specific knowledge, conventions, and user preferences learned by the AI assistant.
+
+## Project Vision & Strategy
+
+- **Primary UVP**: "We turn traditional business owners into marketing winners with done-for-you content and creative that actually converts"
+- **Target Audience**: "The Overwhelmed Expert" - Traditional business owners (35-55) in Malaysia
+- **Package Structure**: Three-tier system (Try Out RM4,450, Growth RM7,500, Partner Custom)
+- **Key Philosophy**: "Just Enough" approach - right-sized solutions for traditional businesses
+
+## Technical Decisions
+
+- **Rules System**: Using `.cursor/rules/*.mdc` files for project governance
+- **Analytics**: Tracking rule usage in `.cursor/analytics.md`
+- **Memory Management**: Storing learned knowledge in `learned-memories.mdc`
+
+## Project Conventions
+
+- **Rule Creation**: All rules must be in `.cursor/rules/` with `.mdc` extension
+- **Rule Naming**: Use kebab-case for rule filenames
+- **Vision Alignment**: All development must reference and align with `vision.md`
+- **Analytics**: Rule usage must be tracked in `analytics.md`
+- **Memory**: Project knowledge must be stored in `learned-memories.mdc`
+
+## User Preferences
+
+- **Development Focus**: Emphasis on serving traditional business owners
+- **Content Strategy**: Focus on Malaysian market and local business needs
+- **Package Alignment**: All features must map to specific package offerings
+- **Simplicity**: Maintain "Just Enough" philosophy in all implementations
+
+## Recent Learnings
+
+- Created comprehensive vision alignment rule to ensure all development aligns with business strategy
+- Established rules system with analytics tracking and memory management
+- Implemented core rules for project governance and consistency

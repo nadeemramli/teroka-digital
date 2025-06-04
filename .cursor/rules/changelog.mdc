@@ -1,0 +1,148 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Changelog Management
+
+Guidelines for maintaining a changelog to track significant project changes, module updates, and file modifications.
+
+## Changelog Structure
+
+1. Create and maintain changelogs in `.changelog/` directory:
+   ```
+   .changelog/
+   ├── CHANGELOG.md        # Main changelog file
+   └── modules/            # Module-specific changelogs
+       ├── core.md
+       ├── marketing.md
+       └── ...
+   ```
+
+2. Main changelog format:
+   ```markdown
+   # Changelog
+
+   All notable changes to the project will be documented in this file.
+
+   ## [Unreleased]
+   ### Added
+   - New feature or module description
+   - Related files: path/to/file1, path/to/file2
+   - Components: ComponentName1, ComponentName2
+   - Functions: functionName1, functionName2
+
+   ### Changed
+   - Description of significant changes
+   - Modified files: path/to/file1, path/to/file2
+   - Updated components: ComponentName1
+   - Modified functions: functionName1
+
+   ### Removed
+   - Description of removed features
+   - Deleted files: path/to/file1
+   - Removed components: ComponentName1
+   - Deprecated functions: functionName1
+
+   ## [Version] - YYYY-MM-DD
+   ### Added
+   ...
+   ```
+
+## Change Categories
+
+1. **Added**: New features, modules, or significant additions
+   - New modules or packages
+   - New major components
+   - New configuration files
+   - New rules or guidelines
+
+2. **Changed**: Significant modifications
+   - Major updates to existing features
+   - Structural changes to modules
+   - Breaking changes in APIs
+   - Significant refactoring
+
+3. **Removed**: Deprecated or removed features
+   - Removed modules or packages
+   - Deleted components
+   - Deprecated functions
+   - Removed configuration options
+
+## Entry Guidelines
+
+1. Each entry should include:
+   - Brief description of the change
+   - Related files (if applicable)
+   - Affected components (if applicable)
+   - Modified functions (if applicable)
+   - Reason for change (if significant)
+
+2. Keep entries concise but informative:
+   ```markdown
+   ### Added
+   - Implemented vision alignment rule system
+   - Related files: .cursor/rules/vision-alignment.mdc
+   - Components: VisionAlignmentChecker
+   - Functions: checkVisionAlignment, validatePackageStructure
+   - Reason: Ensure all development aligns with project vision
+   ```
+
+## AI Instructions
+
+When making changes, the AI should:
+
+1. Update the changelog for significant changes:
+   - New features or modules
+   - Major modifications
+   - File deletions
+   - Breaking changes
+
+2. For each changelog entry:
+   - Categorize the change (Added/Changed/Removed)
+   - List affected files
+   - Note relevant components
+   - Include modified functions
+   - Add reason if significant
+
+3. Maintain chronological order:
+   - Keep unreleased changes at the top
+   - Group changes by version
+   - Use consistent date format
+
+4. Create module-specific changelogs when:
+   - Module has significant independent changes
+   - Changes affect multiple files
+   - Changes impact specific business domains
+
+## Example Changelog Entry
+
+```markdown
+## [Unreleased]
+### Added
+- Implemented AI-assisted development system
+  - Related files: 
+    - .cursor/rules/vision-alignment.mdc
+    - .cursor/rules/memory.mdc
+    - .cursor/rules/rule-analytics.mdc
+  - Components: 
+    - VisionAlignmentChecker
+    - MemoryManager
+    - AnalyticsTracker
+  - Functions:
+    - checkVisionAlignment()
+    - trackRuleUsage()
+    - updateProjectMemory()
+  - Reason: Establish consistent development practices and vision alignment
+
+### Changed
+- Updated project documentation structure
+  - Modified files:
+    - README.md
+    - TASKS.md
+  - Components:
+    - DocumentationRenderer
+  - Functions:
+    - updateProjectStatus()
+  - Reason: Better reflect project vision and development guidelines
+```

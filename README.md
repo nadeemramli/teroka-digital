@@ -1,94 +1,131 @@
-# **Magic Portfolio by Once UI**
+# **Teroka Digital - Marketing Solutions for Traditional Businesses**
 
-View the [demo here](https://demo.magic-portfolio.com).
+![Teroka Digital](https://demo.magic-portfolio.com/images/og/home.jpg)
 
-![Magic Portfolio](https://demo.magic-portfolio.com/images/og/home.jpg)
+## **Our Vision**
 
+We turn traditional business owners into marketing winners with done-for-you content and creative that actually converts - without the overhead of a full marketing team.
 
-# **Getting started**
+### **Target Audience**
+- Traditional business owners (35-55) in Malaysia
+- Annual revenue: RM500K - RM5M
+- Industries: Dental, F&B, Legal, Interior Design, Professional Services
 
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
+### **Our Packages**
+- **Try Out Package** (RM4,450) - Perfect for skeptical business owners
+- **Growth Package** (RM7,500) - Our most popular comprehensive solution
+- **Partner Package** (Custom) - For established businesses ready to scale
+
+## **Getting Started**
+
+This project is built with [Next.js](https://nextjs.org) and requires Node.js v18.17+.
 
 **1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
+```bash
+git clone https://github.com/nadeemramli/teroka-digital.git
 ```
 
 **2. Install dependencies**
-```
+```bash
 npm install
 ```
 
 **3. Run dev server**
-```
+```bash
 npm run dev
 ```
 
-**4. Edit config**
+**4. Project Structure**
 ```
-src/app/resources/config
+teroka-digital/
+├── .cursor/                    # AI Assistant Rules & Memory
+│   ├── rules/                 # Project governance rules
+│   │   ├── vision-alignment.mdc
+│   │   ├── memory.mdc
+│   │   └── ...
+│   ├── analytics.md           # Rule usage tracking
+│   └── learned-memories.mdc   # Project knowledge base
+├── src/
+│   ├── app/                   # Next.js application
+│   │   ├── resources/
+│   │   │   ├── config/       # Site configuration
+│   │   │   └── content/      # Marketing content
+│   │   ├── blog/             # Blog posts
+│   │   └── work/             # Case studies
+│   └── ...
+└── ...
 ```
 
-**5. Edit content**
-```
-src/app/resources/content
-```
+## **Development Guidelines**
 
-**6. Create blog posts / projects**
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
+### **Vision Alignment**
+All development must align with our vision document (`vision.md`). Key principles:
+- Serve the "Overwhelmed Expert" avatar
+- Maintain "Just Enough" philosophy
+- Support our three-tier package system
+- Focus on Malaysian market needs
 
-# **Documentation**
+### **AI-Assisted Development**
+This project uses Cursor AI with custom rules to ensure:
+- Consistent development practices
+- Vision-aligned features
+- Knowledge retention
+- Quality assurance
 
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
+### **Content Management**
+- Marketing content in `src/app/resources/content/`
+- Blog posts in `src/app/blog/posts/`
+- Case studies in `src/app/work/projects/`
+- Configuration in `src/app/resources/config/`
 
-# **Features**
+## **Features**
 
-## **Once UI**
-- All tokens, components & features of [Once UI](https://once-ui.com)
+### **Marketing Focus**
+- Lead generation forms optimized for traditional businesses
+- Industry-specific content templates
+- Local market optimization
+- Package-based feature access
 
-## **SEO**
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+### **Technical Features**
+- Responsive design for all devices
+- SEO optimization with automatic metadata
+- Performance optimized
+- Secure and scalable architecture
 
-## **Design**
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+### **Content Features**
+- Conditional section rendering
+- Social media integration
+- Password protection for premium content
+- Multi-language support (planned)
 
-## **Content**
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+## **Development Rules**
 
-## **Localization**
-- A localized version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+Our development is governed by rules in `.cursor/rules/`:
+- `vision-alignment.mdc`: Ensures all work aligns with our vision
+- `memory.mdc`: Maintains project knowledge and preferences
+- `rule-analytics.mdc`: Tracks rule usage and effectiveness
 
-# **Authors**
+## **Contributing**
 
-Connect with us on Threads or LinkedIn.
+1. Review our vision document (`vision.md`)
+2. Follow our development rules
+3. Ensure alignment with target audience needs
+4. Maintain "Just Enough" philosophy
 
-Lorant Toth: [Threads](https://www.threads.net/@lorant.one), [LinkedIn](https://www.linkedin.com/in/tothlorant/)  
-Zsofia Komaromi: [Threads](https://www.threads.net/@zsofia_kom), [LinkedIn](https://www.linkedin.com/in/zsofiakomaromi/)
+## **License**
 
-Localization added by [François Hernandez](https://github.com/francoishernandez)
+This project is proprietary and confidential. All rights reserved.
 
-# **Get involved**
+## **Contact**
 
-- Join the [Design Engineers Club on Discord](https://discord.com/invite/5EyAQ4eNdS) and share your portfolio with us!
-- Report a [bug](https://github.com/once-ui-system/magic-portfolio/issues/new?labels=bug&template=bug_report.md).
+For business inquiries:
+- Email: [Your Business Email]
+- Website: [Your Website]
+- LinkedIn: [Your LinkedIn]
 
-# **License**
+## **Technical Credits**
 
-Distributed under the CC BY-NC 4.0 License.
-- Commercial usage is not allowed.
-- Attribution is required.
-- You can extend the license to commercial use by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
-
-See `LICENSE.txt` for more information.
-
-# **Deploy with Vercel**
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+This project is built upon:
+- [Next.js](https://nextjs.org) - React framework
+- [Once UI](https://once-ui.com) - Design system
+- Custom AI-assisted development system
