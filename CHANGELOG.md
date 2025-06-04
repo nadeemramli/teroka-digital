@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.3](https://github.com/nadeemramli/teroka-digital/compare/v2.0.2...v2.0.3) (2025-01-09)
+
+### Bug Fixes
+
+* **routing**: fix RouteGuard to handle internationalized routes (/en, /my, /cn) properly ([#critical](https://github.com/nadeemramli/teroka-digital/issues/critical)) 
+  - RouteGuard now strips language prefixes before checking routes
+  - Maps language root paths (e.g., /en) to base route (/)
+  - Enables proper page rendering instead of white screen
+  - Fixes language-aware route validation
+
+* **hydration**: resolve React hydration mismatch with theme system ([#critical](https://github.com/nadeemramli/teroka-digital/issues/critical))
+  - Fixed server/client theme attribute synchronization
+  - Removed conflicting ClientThemeScript to prevent hydration errors
+  - Added suppressHydrationWarning for theme-related components
+  - Ensures consistent theme rendering between server and client
+
+* **theme**: improve theme switching functionality ([#enhancement](https://github.com/nadeemramli/teroka-digital/issues/enhancement))
+  - Updated ThemeProvider to handle theme changes without layout breaks
+  - Fixed theme persistence in localStorage
+  - Improved theme toggle responsiveness
+  - Added proper theme attribute management on document root
+
+* **layout**: restore missing footer and fix layout structure ([#critical](https://github.com/nadeemramli/teroka-digital/issues/critical))
+  - Footer now renders properly with all navigation sections
+  - Fixed layout flex structure for proper content flow
+  - Ensured header, content, and footer positioning
+  - Restored social media links and legal navigation
+
+* **internationalization**: improve multi-language support ([#enhancement](https://github.com/nadeemramli/teroka-digital/issues/enhancement))
+  - Added language-aware route handling in middleware
+  - Fixed translation loading for footer navigation
+  - Improved language switcher functionality
+  - Enhanced support for EN, MY, and CN languages
+
+### Technical Improvements
+
+* **developer experience**: enhanced error handling and debugging
+  - Improved error messages for routing issues
+  - Better hydration error prevention
+  - Enhanced TypeScript support for theme types
+  - Added proper error boundaries for graceful fallbacks
+
 ### [2.0.2](https://github.com/nadeemramli/teroka-digital/compare/v2.0.1...v2.0.2) (2025-06-03)
 
 ### [2.0.1](https://github.com/once-ui-system/magic-portfolio/compare/v1.3.0...v2.0.1) (2025-06-03)

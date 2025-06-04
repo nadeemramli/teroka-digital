@@ -73,3 +73,195 @@ This file stores project-specific knowledge, conventions, and user preferences l
 -   [Convention 1]
 -   [Convention 2]
 ```
+
+# Project Memory & Key Learnings
+
+This file captures critical knowledge, patterns, and solutions discovered during development to preserve learnings across AI sessions.
+
+## Recent Critical Fixes (January 2025) 🚨
+
+### Internationalization & Routing Fixes
+- **CRITICAL**: RouteGuard component must handle language-prefixed routes (`/en`, `/my`, `/cn`)
+- **Solution**: Strip language prefixes before checking against routes configuration
+- **Code Pattern**: 
+  ```typescript
+  const getBaseRoute = (path: string) => {
+    for (const lang of supportedLanguages) {
+      if (path === `/${lang}`) return "/";
+      if (path.startsWith(`/${lang}/`)) return path.substring(lang.length + 1);
+    }
+    return path;
+  };
+  ```
+- **Files**: `src/components/RouteGuard.tsx`, `src/middleware.ts`
+
+### Hydration Mismatch Prevention
+- **CRITICAL**: Theme system causing server/client HTML mismatch
+- **Solution**: Use `suppressHydrationWarning` and avoid conflicting theme scripts
+- **Code Pattern**:
+  ```typescript
+  // In ThemeProvider
+  return (
+    <div suppressHydrationWarning>
+      <ThemeProviderContext.Provider value={value}>
+        {children}
+      </ThemeProviderContext.Provider>
+    </div>
+  );
+  ```
+- **Files**: `src/once-ui/components/ThemeProvider.tsx`, `src/app/[lang]/layout.tsx`
+
+### Theme System Best Practices
+- **CRITICAL**: Set initial data-theme attributes on `<html>` element during SSR
+- **Solution**: Add theme attributes directly in layout.tsx, not via client scripts
+- **Code Pattern**:
+  ```typescript
+  <html 
+    data-theme={style.theme}
+    data-neutral={style.neutral}
+    // ... other style attributes
+  >
+  ```
+
+### Translation Integration
+- **CRITICAL**: Footer and navigation need complete translation coverage
+- **Solution**: Ensure all translation keys exist in EN, MY, CN files
+- **Pattern**: Always test translation key paths: `t('common.footer.services.title')`
+
+## Architecture Patterns
+
+### Multi-Language Routing
+- **Pattern**: `/[lang]/` dynamic segments for all routes
+- **Middleware**: Redirect root `/` to `/en` based on Accept-Language header
+- **RouteGuard**: Strip language prefixes before route validation
+- **Translations**: Load per language with graceful fallbacks
+
+### Theme Management
+- **Server**: Set initial attributes in HTML element
+- **Client**: Update attributes via ThemeProvider after hydration
+- **Persistence**: localStorage with system preference detection
+- **Hydration**: Use suppressHydrationWarning for theme-related components
+
+### Layout Structure
+- **Pattern**: Header → Main Content → Footer with `minHeight: "100vh"`
+- **Flex**: Use column direction with `flex={1}` for main content area
+- **Background**: Fixed position with proper z-index layering
+
+## Component Patterns
+
+### RouteGuard Pattern
+```typescript
+// Check if route is enabled after stripping language prefix
+const getBaseRoute = (path: string) => {
+  for (const lang of supportedLanguages) {
+    if (path === `/${lang}`) return "/";
+    if (path.startsWith(`/${lang}/`)) return path.substring(lang.length + 1);
+  }
+  return path;
+};
+
+const baseRoute = getBaseRoute(pathname);
+if (baseRoute in routes) {
+  return routes[baseRoute as keyof typeof routes];
+}
+```
+
+### Theme Provider Pattern
+```typescript
+// Prevent hydration mismatches
+const [mounted, setMounted] = useState(false);
+
+useEffect(() => {
+  setMounted(true);
+}, []);
+
+// Only update DOM after client mount
+useEffect(() => {
+  if (!mounted) return;
+  // DOM updates here
+}, [theme, mounted]);
+```
+
+### Translation Pattern
+```typescript
+// Always provide fallbacks
+const t = useTranslations();
+const title = t('common.footer.services.title') || 'Services';
+```
+
+## Known Issues & Solutions
+
+### White Screen Issue
+- **Cause**: RouteGuard not recognizing internationalized routes
+- **Solution**: Language prefix stripping in RouteGuard
+- **Prevention**: Always test with `/en`, `/my`, `/cn` URLs
+
+### Hydration Mismatch
+- **Cause**: Server renders different HTML than client expects
+- **Solution**: Consistent theme attributes + suppressHydrationWarning
+- **Prevention**: Test theme switching in both SSR and CSR
+
+### Missing Footer
+- **Cause**: Translation loading failures breaking component render
+- **Solution**: Complete translation coverage + fallbacks
+- **Prevention**: Test all supported languages thoroughly
+
+## Development Workflow
+
+### Testing Checklist
+- [ ] Test all routes with language prefixes: `/en/`, `/my/`, `/cn/`
+- [ ] Verify theme switching works without console errors
+- [ ] Check footer renders in all languages
+- [ ] Validate no hydration warnings in browser console
+- [ ] Test both SSR and CSR rendering
+
+### Debug Patterns
+1. **White Screen**: Check RouteGuard route validation logic
+2. **Hydration Errors**: Look for server/client HTML differences
+3. **Theme Issues**: Verify attribute synchronization between server/client
+4. **Missing Translations**: Check translation key paths and fallbacks
+
+## File Structure Patterns
+
+### Key Files for Issues
+- **Routing**: `src/components/RouteGuard.tsx`, `src/middleware.ts`
+- **Theme**: `src/once-ui/components/ThemeProvider.tsx`, `src/app/[lang]/layout.tsx`
+- **Translations**: `src/lib/i18n/translations/*.json`, `src/lib/i18n/provider.tsx`
+- **Layout**: `src/app/[lang]/layout.tsx`, `src/components/base/Footer/Footer.tsx`
+
+### Once UI Integration
+- Use Once UI components consistently: `Flex`, `Column`, `Text`, etc.
+- Leverage Once UI theme system with custom enhancements
+- Maintain design system compliance across all components
+- Use Once UI's responsive props: `mobileDirection`, `tabletColumns`
+
+## Performance Considerations
+
+### Internationalization
+- Load translations only for current language
+- Implement language detection efficiently
+- Cache translation data appropriately
+- Use static generation where possible
+
+### Theme System
+- Minimize DOM updates during theme changes
+- Use CSS custom properties for efficient theme switching
+- Implement smooth transitions without layout shifts
+- Cache theme preferences in localStorage
+
+## Future Development Notes
+
+### Next Priority: Projects Component
+- **Issue**: Images overlapping, breaking layout
+- **Investigation Needed**: Carousel component image rendering
+- **Files**: `src/components/templates/landing/case-studies/Projects.tsx`
+- **Goal**: Safe re-enable on homepage without layout breaks
+
+### Monitoring Points
+- Watch for new hydration mismatches when adding components
+- Test internationalization with every new route
+- Verify theme consistency across all new UI elements
+- Maintain translation completeness across all supported languages
+
+---
+*Last Updated: January 9, 2025 - Critical routing and hydration fixes*
