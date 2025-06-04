@@ -1,4 +1,4 @@
-import { Column, Row, Text, Card, Image, Avatar } from "@/once-ui/components";
+import { Column, Row, Text, Card, Avatar } from "@/once-ui/components";
 import styles from "./SocialProof.module.scss";
 
 interface Testimonial {
@@ -17,7 +17,7 @@ interface SocialProofProps {
 export function SocialProof({ testimonials }: SocialProofProps) {
   return (
     <section className={styles.socialProof}>
-      <Column gap="xl" align="center" paddingY="xxl">
+      <Column gap="xl" align="center" paddingY="xl">
         <Column gap="m" align="center" maxWidth={800}>
           <Text variant="heading-strong-l" align="center">
             What Our Clients Say
@@ -35,28 +35,24 @@ export function SocialProof({ testimonials }: SocialProofProps) {
               className={styles.testimonialCard}
               padding="xl"
             >
-              <Column gap="l" height="100%">
-                <Text variant="body1" className={styles.quote}>
+              <Column gap="l" className={styles.testimonialContent}>
+                <Text variant="body-default-l" className={styles.quote}>
                   &ldquo;{testimonial.content}&rdquo;
                 </Text>
 
                 <Row gap="m" align="center" className={styles.author}>
                   {testimonial.image ? (
-                    <Avatar
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      size="md"
-                    />
+                    <Avatar src={testimonial.image} size="m" />
                   ) : (
                     <div className={styles.avatarPlaceholder}>
                       {testimonial.name.charAt(0)}
                     </div>
                   )}
                   <Column gap="xs">
-                    <Text variant="subtitle1" weight="medium">
+                    <Text variant="label-default-m" weight="strong">
                       {testimonial.name}
                     </Text>
-                    <Text variant="body2" color="secondary">
+                    <Text variant="label-default-s" color="secondary">
                       {testimonial.role}, {testimonial.company}
                     </Text>
                   </Column>

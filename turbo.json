@@ -1,0 +1,89 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "build": {
+      "env": ["NODE_ENV"],
+      "inputs": [
+        "src/**/*",
+        "public/**/*",
+        "next.config.mjs",
+        "package.json",
+        "tsconfig.json",
+        "!src/**/*.test.*",
+        "!src/**/*.spec.*"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ]
+    },
+    "build:next": {
+      "inputs": [
+        "src/**/*",
+        "public/**/*",
+        "next.config.mjs",
+        "package.json",
+        "tsconfig.json"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**"
+      ]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": {
+      "inputs": [
+        "src/**/*",
+        ".eslintrc.*",
+        "package.json"
+      ]
+    },
+    "lint:next": {
+      "inputs": [
+        "src/**/*",
+        ".eslintrc.*",
+        "package.json"
+      ]
+    },
+    "type-check": {
+      "inputs": [
+        "src/**/*",
+        "tsconfig.json",
+        "package.json"
+      ]
+    },
+    "type-check:next": {
+      "inputs": [
+        "src/**/*",
+        "tsconfig.json",
+        "package.json"
+      ]
+    },
+    "test": {
+      "inputs": [
+        "src/**/*",
+        "package.json",
+        "jest.config.*",
+        "vitest.config.*"
+      ]
+    },
+    "clean": {
+      "cache": false
+    },
+    "clean:next": {
+      "cache": false
+    }
+  },
+  "globalDependencies": [
+    "package-lock.json"
+  ],
+  "globalEnv": [
+    "NODE_ENV",
+    "VERCEL_URL",
+    "VERCEL_ENV"
+  ]
+} 

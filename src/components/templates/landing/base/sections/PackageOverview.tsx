@@ -21,12 +21,12 @@ export function PackageOverview({ packages }: PackageOverviewProps) {
 
   return (
     <section className={styles.packageOverview}>
-      <Column gap="xl" align="center" paddingY="xxl">
-        <Column gap="m" align="center" maxWidth="800px">
-          <Text variant="h2" align="center">
+      <Column gap="xl" align="center" paddingY="xl">
+        <Column gap="m" align="center" maxWidth={800}>
+          <Text variant="heading-strong-l" align="center">
             Choose Your Growth Path
           </Text>
-          <Text variant="body1" align="center" color="secondary">
+          <Text variant="body-default-l" align="center" color="secondary">
             Select the package that best fits your business needs and goals
           </Text>
         </Column>
@@ -40,15 +40,15 @@ export function PackageOverview({ packages }: PackageOverviewProps) {
               }`}
               padding="xl"
             >
-              <Column gap="l" height="100%">
+              <Column gap="l" className={styles.packageContent}>
                 <Column gap="m">
-                  <Text variant="h3">{pkg.name}</Text>
-                  <Text variant="h2" color="primary">
+                  <Text variant="heading-strong-m">{pkg.name}</Text>
+                  <Text variant="heading-strong-l" color="accent">
                     {pkg.price === 0
                       ? "Custom"
                       : `RM${pkg.price.toLocaleString()}`}
                   </Text>
-                  <Text variant="body2" color="secondary">
+                  <Text variant="body-default-m" color="secondary">
                     {pkg.description}
                   </Text>
                 </Column>
@@ -57,7 +57,7 @@ export function PackageOverview({ packages }: PackageOverviewProps) {
                   {pkg.features.map((feature) => (
                     <Row key={feature} gap="m" align="center">
                       <div className={styles.checkmark}>✓</div>
-                      <Text variant="body2">{feature}</Text>
+                      <Text variant="body-default-m">{feature}</Text>
                     </Row>
                   ))}
                 </Column>

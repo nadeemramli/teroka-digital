@@ -18,7 +18,7 @@ export function Posts({
   direction,
   lang,
 }: PostsProps) {
-  let allBlogs = getPosts(["src", "app", "blog", "posts"]);
+  let allBlogs = getPosts(["src", "app", "[lang]", "blog", "posts"]);
 
   const sortedBlogs = allBlogs.sort((a, b) => {
     return (

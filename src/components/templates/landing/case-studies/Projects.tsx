@@ -9,7 +9,7 @@ interface ProjectsProps {
 }
 
 export function Projects({ range, lang }: ProjectsProps) {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+  let allProjects = getPosts(["src", "app", "[lang]", "work", "projects"]);
 
   const sortedProjects = allProjects.sort((a, b) => {
     return (

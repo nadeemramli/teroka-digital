@@ -1,12 +1,24 @@
 {
   "name": "@once-ui-system/magic-portfolio",
   "version": "2.0.2",
+  "packageManager": "npm@10.0.0",
   "scripts": {
-    "dev": "next dev",
-    "export": "next export",
+    "dev": "next dev --turbo",
+    "dev:webpack": "next dev",
     "build": "next build",
+    "build:turbo": "turbo build:next",
+    "build:next": "next build",
+    "build:performance": "node scripts/build-performance.js",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "turbo lint:next",
+    "lint:next": "next lint",
+    "lint:fix": "next lint --fix",
+    "type-check": "turbo type-check:next",
+    "type-check:next": "tsc --noEmit",
+    "test": "turbo test",
+    "clean": "turbo clean:next",
+    "clean:next": "rm -rf .next .vercel",
+    "clean:all": "rm -rf .next .vercel .turbo node_modules package-lock.json && npm install",
     "release": "standard-version"
   },
   "dependencies": {
@@ -27,7 +39,8 @@
     "react-masonry-css": "^1.0.16",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
-    "sass": "^1.86.3",
+    "sass": "^1.89.1",
+    "sass-loader": "^16.0.5",
     "sharp": "^0.34.1"
   },
   "devDependencies": {
@@ -41,6 +54,11 @@
     "postcss-custom-media": "^10.0.8",
     "postcss-flexbugs-fixes": "^5.0.2",
     "standard-version": "^9.5.0",
+    "turbo": "^2.5.4",
     "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
   }
 }

@@ -30,7 +30,7 @@
   padding-left: var(--spacing-m);
 
   &::before {
-    content: """;
+    content: "\201C";
     position: absolute;
     left: 0;
     top: -0.5em;
@@ -68,4 +68,4 @@
     width: 100%;
     max-width: 100%;
   }
-} 
+}

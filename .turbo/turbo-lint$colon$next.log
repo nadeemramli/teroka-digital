@@ -1,0 +1,25 @@
+
+
+> @once-ui-system/magic-portfolio@2.0.2 lint:next
+> next lint
+
+[1G[0K
+[36m./src/app/og/route.tsx[39m
+[33m56[39m:[33m11[39m  [33m[1mWarning[22m[39m: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  [90m[1m@next/next/no-img-element[22m[39m
+[33m56[39m:[33m11[39m  [33m[1mWarning[22m[39m: img elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  [90m[1mjsx-a11y/alt-text[22m[39m
+
+[36m./src/once-ui/components/CompareImage.tsx[39m
+[33m82[39m:[33m6[39m  [33m[1mWarning[22m[39m: React Hook useEffect has missing dependencies: 'handleMouseMove' and 'handleTouchMove'. Either include them or remove the dependency array.  [90m[1mreact-hooks/exhaustive-deps[22m[39m
+
+[36m./src/once-ui/components/Kbar.tsx[39m
+[33m412[39m:[33m6[39m  [33m[1mWarning[22m[39m: React Hook useEffect has a missing dependency: 'isOpen'. Either include it or remove the dependency array.  [90m[1mreact-hooks/exhaustive-deps[22m[39m
+
+[36m./src/once-ui/components/Logo.tsx[39m
+[33m60[39m:[33m9[39m  [33m[1mWarning[22m[39m: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  [90m[1m@next/next/no-img-element[22m[39m
+[33m79[39m:[33m9[39m  [33m[1mWarning[22m[39m: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  [90m[1m@next/next/no-img-element[22m[39m
+
+[36m./src/once-ui/components/ScrollToTop.tsx[39m
+[33m32[39m:[33m6[39m  [33m[1mWarning[22m[39m: React Hook useEffect has a missing dependency: 'handleScroll'. Either include it or remove the dependency array.  [90m[1mreact-hooks/exhaustive-deps[22m[39m
+
+[36minfo[39m  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+[1G[0K⠙[1G[0K

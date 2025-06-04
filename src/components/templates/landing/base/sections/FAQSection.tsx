@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Column, Text, Card } from "@/once-ui/components";
 import styles from "./FAQSection.module.scss";

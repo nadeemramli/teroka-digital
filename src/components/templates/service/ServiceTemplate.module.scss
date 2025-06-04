@@ -1,0 +1,52 @@
+.serviceTemplate {
+  width: 100%;
+
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .heroSection {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .processSection {
+    background-color: var(--color-background-secondary);
+  }
+
+  .benefitsSection {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .pricingSection {
+    background-color: var(--color-background-secondary);
+    text-align: center;
+  }
+
+  .testimonialsSection {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  .faqSection {
+    background-color: var(--color-background-secondary);
+  }
+
+  .ctaSection {
+    text-align: center;
+    padding: var(--spacing-2xl) 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceTemplate {
+    .section {
+      padding: var(--spacing-l) 0;
+    }
+
+    .heroSection,
+    .pricingSection,
+    .ctaSection {
+      padding: var(--spacing-xl) 0;
+    }
+  }
+}

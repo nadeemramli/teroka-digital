@@ -37,7 +37,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ image }) => {
           </Text>
 
           <Text
-            variant="body-xl"
+            variant="body-default-xl"
             onBackground="neutral-medium"
             className={styles.description}
           >
@@ -58,11 +58,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ image }) => {
 
         {/* Hero Image */}
         {image && (
-          <Flex
-            className={styles.heroImage}
-            maxWidth="500"
-            mobileMaxWidth="100%"
-          >
+          <Flex className={styles.heroImage} maxWidth={500}>
             <Image
               src={image}
               alt={t("home.hero.title")}

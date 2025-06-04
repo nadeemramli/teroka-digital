@@ -1,4 +1,4 @@
-import { Column, Row, Text, Card, Image } from "@/once-ui/components";
+import { Column, Row, Text, Card, SmartImage } from "@/once-ui/components";
 import styles from "./ResultsShowcase.module.scss";
 
 interface Metric {
@@ -21,27 +21,26 @@ interface ResultsShowcaseProps {
 export function ResultsShowcase({ results }: ResultsShowcaseProps) {
   return (
     <section className={styles.resultsShowcase}>
-      <Column gap="xl" align="center" paddingY="xxl">
-        <Column gap="m" align="center" maxWidth="800px">
-          <Text variant="h2" align="center">
+      <Column gap="xl" align="center" paddingY="xl">
+        <Column gap="m" align="center" maxWidth={800}>
+          <Text variant="heading-strong-l" align="center">
             Real Results, Real Growth
           </Text>
-          <Text variant="body1" align="center" color="secondary">
+          <Text variant="body-default-l" align="center" color="secondary">
             See how we&apos;ve helped businesses achieve their digital marketing
             goals
           </Text>
         </Column>
 
-        <Column gap="xxl" className={styles.results}>
+        <Column gap="xl" className={styles.results}>
           {results.map((result, index) => (
             <Card
               key={result.id}
               className={`${styles.resultCard} ${
                 index % 2 === 1 ? styles.reversed : ""
               }`}
-              padding="none"
             >
-              <Row gap="none" className={styles.resultContent} wrap>
+              <Row className={styles.resultContent} wrap>
                 <Column
                   gap="l"
                   padding="xl"
@@ -49,8 +48,8 @@ export function ResultsShowcase({ results }: ResultsShowcaseProps) {
                   flex={1}
                 >
                   <Column gap="m">
-                    <Text variant="h3">{result.title}</Text>
-                    <Text variant="body1" color="secondary">
+                    <Text variant="heading-strong-m">{result.title}</Text>
+                    <Text variant="body-default-l" color="secondary">
                       {result.description}
                     </Text>
                   </Column>
@@ -62,10 +61,10 @@ export function ResultsShowcase({ results }: ResultsShowcaseProps) {
                         gap="xs"
                         className={styles.metric}
                       >
-                        <Text variant="h2" color="primary">
+                        <Text variant="heading-strong-l" color="accent">
                           {metric.value}
                         </Text>
-                        <Text variant="body2" color="secondary">
+                        <Text variant="body-default-m" color="secondary">
                           {metric.label}
                         </Text>
                       </Column>
@@ -75,7 +74,7 @@ export function ResultsShowcase({ results }: ResultsShowcaseProps) {
 
                 {result.image && (
                   <div className={styles.imageContainer}>
-                    <Image
+                    <SmartImage
                       src={result.image}
                       alt={result.title}
                       width={600}

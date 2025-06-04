@@ -34,7 +34,11 @@ const renderContent = (content: SideContent, clipPath: string) => {
   );
 };
 
-export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImageProps) => {
+export const CompareImage = ({
+  leftContent,
+  rightContent,
+  ...rest
+}: CompareImageProps) => {
   const [position, setPosition] = useState(50);
   const containerRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
@@ -59,15 +63,15 @@ export const CompareImage = ({ leftContent, rightContent, ...rest }: CompareImag
     setPosition(newPosition);
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
-    updatePosition(e.clientX);
-  };
-
-  const handleTouchMove = (e: TouchEvent) => {
-    updatePosition(e.touches[0].clientX);
-  };
-
   useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      updatePosition(e.clientX);
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      updatePosition(e.touches[0].clientX);
+    };
+
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
     document.addEventListener("touchmove", handleTouchMove);

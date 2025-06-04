@@ -1,4 +1,4 @@
-import { Column, Row, Text, Card, Image } from "@/once-ui/components";
+import { Column, Row, Text, Card, SmartImage } from "@/once-ui/components";
 import Link from "next/link";
 import styles from "./IndustrySelector.module.scss";
 
@@ -17,12 +17,12 @@ interface IndustrySelectorProps {
 export function IndustrySelector({ industries }: IndustrySelectorProps) {
   return (
     <section className={styles.industrySelector}>
-      <Column gap="xl" align="center" paddingY="xxl">
-        <Column gap="m" align="center" maxWidth="800px">
-          <Text variant="h2" align="center">
+      <Column gap="xl" align="center" paddingY="xl">
+        <Column gap="m" align="center" maxWidth={800}>
+          <Text variant="heading-strong-l" align="center">
             Solutions for Your Industry
           </Text>
-          <Text variant="body1" align="center" color="secondary">
+          <Text variant="body-default-l" align="center" color="secondary">
             Discover how we help businesses in your industry grow their digital
             presence
           </Text>
@@ -35,9 +35,9 @@ export function IndustrySelector({ industries }: IndustrySelectorProps) {
               href={industry.link}
               className={styles.industryLink}
             >
-              <Card className={styles.industryCard} padding="none">
+              <Card className={styles.industryCard}>
                 <div className={styles.imageContainer}>
-                  <Image
+                  <SmartImage
                     src={industry.image}
                     alt={industry.name}
                     width={400}
@@ -47,8 +47,8 @@ export function IndustrySelector({ industries }: IndustrySelectorProps) {
                   <div className={styles.overlay} />
                 </div>
                 <Column gap="m" padding="l" className={styles.content}>
-                  <Text variant="h3">{industry.name}</Text>
-                  <Text variant="body2" color="secondary">
+                  <Text variant="heading-strong-m">{industry.name}</Text>
+                  <Text variant="body-default-m" color="secondary">
                     {industry.description}
                   </Text>
                 </Column>

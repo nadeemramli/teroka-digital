@@ -30,6 +30,32 @@ export const pageMetadata = {
       twitterDescription: "通过我们有效的数字营销解决方案，助力您的传统企业转型。",
     },
   },
+  packages: {
+    en: {
+      title: "Marketing Packages for Traditional Businesses - Teroka Digital",
+      description: "Choose from our Try Out (RM4,450), Growth (RM7,500), or Partner (Custom) packages. Professional marketing solutions for Malaysian traditional businesses.",
+      ogTitle: "Marketing Packages - Teroka Digital",
+      ogDescription: "Affordable marketing packages designed for traditional businesses in Malaysia. From RM4,450 to custom solutions.",
+      twitterTitle: "Marketing Packages - Teroka Digital",
+      twitterDescription: "Affordable marketing packages designed for traditional businesses in Malaysia.",
+    },
+    my: {
+      title: "Pakej Pemasaran untuk Perniagaan Tradisional - Teroka Digital",
+      description: "Pilih daripada pakej Cuba (RM4,450), Pertumbuhan (RM7,500), atau Rakan Kongsi (Khas). Penyelesaian pemasaran profesional untuk perniagaan tradisional Malaysia.",
+      ogTitle: "Pakej Pemasaran - Teroka Digital",
+      ogDescription: "Pakej pemasaran mampu milik direka untuk perniagaan tradisional di Malaysia. Dari RM4,450 hingga penyelesaian khas.",
+      twitterTitle: "Pakej Pemasaran - Teroka Digital",
+      twitterDescription: "Pakej pemasaran mampu milik direka untuk perniagaan tradisional di Malaysia.",
+    },
+    cn: {
+      title: "传统企业营销套餐 - Teroka Digital",
+      description: "选择我们的试用套餐（RM4,450）、增长套餐（RM7,500）或合作伙伴套餐（定制）。为马来西亚传统企业提供专业营销解决方案。",
+      ogTitle: "营销套餐 - Teroka Digital",
+      ogDescription: "为马来西亚传统企业设计的实惠营销套餐。从RM4,450到定制解决方案。",
+      twitterTitle: "营销套餐 - Teroka Digital",
+      twitterDescription: "为马来西亚传统企业设计的实惠营销套餐。",
+    },
+  },
   about: {
     en: {
       title: about.title,
@@ -141,6 +167,7 @@ export function generatePageMetadata(page: keyof typeof pageMetadata, lang: Supp
   const metadata = pageMetadata[page][lang];
   const path = {
     home: "/",
+    packages: "/packages",
     about: "/about",
     blog: "/blog",
     work: "/work",
